@@ -54,4 +54,11 @@ docker push ravitejademolab/webserver-image:v1
 
 ### Create a Jenkinsfile in your GitHub repo (use your own account) with two Jenkinsfiles.
 
-[Jenkinsfile to publish docker image](/blob/master/Jenkinsfile)
+[Jenkinsfile to publish docker image](/Jenkinsfile)
+
+Create a new pipeline in the Jenkins
+![](/images/8.png)
+![](/images/9.png)
+![](/images/10.png)
+![](/images/11.png)
+![](/images/12.png)

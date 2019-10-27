@@ -1,3 +1,14 @@
+## Install Docker
+
+1. sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+2. sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+3. sudo yum install docker-ce docker-ce-cli containerd.io
+4. sudo systemctl start docker
+5. sudo docker run hello-world
+![](/images/install_1.png)
+![](/images/install_2.png)
+![](/images/install_3.png)
+
 ## Create a GitRepo (in your own account) that creates a basic webpage.
 
 Steps:
@@ -15,31 +26,32 @@ git push -u origin master
 ```
 ![](/images/2.png)
 
-Create a Docker file that exposes the basic webpage. 
+## Create a Docker file that exposes the basic webpage. 
+
+```
 echo "FROM nginx:alpine\nCOPY . /usr/share/nginx/html" >> Dockerfile
 docker build -t webserver-image:v1 .
 docker run -d -p 80:80 webserver-image:v1
 curl docker
+````
+![](/images/3.png)
+![](/images/4.png)
 
-Log in on https://hub.docker.com/
-Click on Create Repository.
+## Create a DockerHub account so you can publish a Docker Image to it. 
+1. Log in on https://hub.docker.com/
+2. Click on Create Repository.
 Choose a name (e.g. webserver-image) and a description for your repository and click Create.
+![](/images/5.png)
 
+```
 docker login --username=ravitejademolab
 "docker images" to get the tag
 docker tag 79a6c081b38b ravitejademolab/webserver-image:v1
 docker push ravitejademolab/webserver-image:v1
+```
+![](/images/6.png)
+![](/images/7.png)
 
+### Create a Jenkinsfile in your GitHub repo (use your own account) with two Jenkinsfiles.
 
-Create a Jenkinsfile in your GitHub repo (use your own account) with two Jenkinsfiles.
-
-
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io
-sudo systemctl start docker
-sudo docker run hello-world
-
-
-docker build -t webserver-image .
-docker run -dit --rm --name webserver -p 80:80 webserver-image
+[Jenkinsfile to publish docker image](/blob/master/Jenkinsfile)

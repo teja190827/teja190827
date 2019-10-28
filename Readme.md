@@ -119,3 +119,17 @@ Create a new pipeline in the Jenkins
 ![](/images/10.png)
 ![](/images/11.png)
 ![](/images/12.png)
+
+##Use a Public Helm chart to deploy the Jenkins Chart onto the MiniKube instance on your environment.
+Instead of mini kube we are using kubernetes cluster:
+
+```
+helm install  stable/jenkins
+```
+
+
+## Write a script in Bash that checks pods running in your MiniKube environment and prints out the Pod Name and Namespace.
+```
+#!/bin/bash
+kubectl get pods -o wide
+```

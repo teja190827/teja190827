@@ -4,21 +4,21 @@
 2.	Select Create a resource > Storage > Storage account - blob, file, table, queue.
 3.	Enter the following information:
 
-![](azure1.png)
+![](/images/azure1.png)
 
-![](azure2.png)
+![](/images/azure2.png)
 
 4.	Select Review + create on the bottom of the screen. Do not select Create in the next step.
 5.	Select Download a template for automation on the bottom of the screen. The portal shows the generated template:
 
-![](azure3.png)
+![](/images/azure3.png)
 
 6.	Select Download from the top of the screen.
 7.	Open the downloaded zip file, and then save template.json to your computer. In the next section, you use a template deployment tool to edit the template.
 8.	Select the Parameter tab to see the values you provided for the parameters. Write down these values, you need them in the next section when you deploy the template.
 
 
-![](azure4.png)
+![](/images/azure4.png)
 
 Using both the template file and the parameters file, you can create a resource, in this tutorial, an Azure storage account.
 
@@ -31,14 +31,14 @@ In the Azure portal, select Create a resource.
 In Search the Marketplace, type template deployment, and then press ENTER.
 Select Template deployment.
 
-![](azure5.png)
+![](/images/azure5.png)
 
 1.	Select Create.
 2.	Select Build your own template in the editor.
 3.	Select Load file, and then follow the instructions to load template.json you downloaded in the last section.
 4.	Make the following three changes to the template:
 
-![](azure6.png)
+![](/images/azure6.png)
 
 •	Remove the storageAccountName parameter as shown in the previous screenshot.
 •	Add one variable called storageAccountName as shown in the previous screenshot:
@@ -110,16 +110,16 @@ Access Tier -> Enter Hot for this quickstart.
 Https Traffic Only Enabled -> Select true for this quickstart.
 I agree to the terms and conditions stated above -> (select)
 ```
-![](azure7.png)
+![](/images/azure7.png)
 
 Here is a screenshot of a sample deployment:
 
-![](azure8.png)
+![](/images/azure8.png)
 
 1.	Select Purchase.
 2.	Select the bell icon (notifications) from the top of the screen to see the deployment status. You shall see Deployment in progress. Wait until the deployment is completed.
 
 Select Go to resource group from the notification pane. You shall see a screen similar to:
 
-![](azure9.png)
+![](/images/azure9.png)
 You can see the deployment status was successful

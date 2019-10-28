@@ -1,3 +1,60 @@
+## Install java-1.8.0-openjdk-devel
+Install Java
+
+```
+ sudo yum install -y java-1.8.0-openjdk-devel
+```
+![](/images/install_4.png)
+
+## Install the repo and key, and then install Jenkinskeyboard_arrow_up
+Install wget
+
+```
+sudo yum install -y wget
+```
+
+![](/images/install_5.png)
+
+Download the repo.
+
+```
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+```
+
+Import the required key.
+```
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+```
+
+Install Jenkins.
+```
+sudo yum install -y jenkins
+```
+![](/images/install_6.png)
+![](/images/install_7.png)
+
+```
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+
+```
+
+Once you install Jenkins, you will need the temporary admin password to complete setup in the browser. You can get the temporary admin password with this command:
+
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+Slave set up
+geneterate a key in master server
+
+```
+su jenkins -s /bin/bash
+bash-4.2$ 
+bash-4.2$ ssh-keygen
+
+```
+
 ## Install Docker
 
 1. sudo yum install -y yum-utils device-mapper-persistent-data lvm2
